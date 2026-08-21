@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>closures</title>
+  </head>
+  <body>
+    <script>
+      //increse counter
+
+      function createCount() {
+        let count = 0;
+        return function () {
+          count++;
+          console.log(count);
+        };
+      }
+      const counter = createCount();
+      counter();
+      counter();
+      /*//closure + hiding data
+      function createAccount() {
+        let balance = 0;
+        return {
+          deposit(amount) {
+            balance += amount;
+          },
+          getBalance() {
+            console.log(balance);
+          },
+        };
+      }
+      const account = createAccount();
+
+      account.deposit(100);
+      account.deposit(50);
+      account.getBalance();
+      //Greet name
+      function greet(name) {
+        return function () {
+          console.log("Hello, " + name);
+        };
+      }
+      const sayHello = greet("Hema");
+      sayHello();
+      sayHello();
+      //Advanced version
+      function greet(name) {
+        return function (times) {
+          for (let i = 0; i < times; i++) {
+            console.log("Hello, " + name);
+          }
+        };
+      }
+      const sayHello = greet("Hema");
+      sayHello(2);
+      //Once Function
+      function once() {
+        let called = false;
+        return function () {
+          if (!called) {
+            console.log("Hello");
+            called = true;
+          } else {
+            console.log("Already Called");
+          }
+        };
+      }
+      const fn = once();
+      fn();
+      fn();
+      //Multiple counters(Independent closures)
+      function createCounter() {
+        let count = 0;
+        return function () {
+          count++;
+          console.log(count);
+        };
+      }
+      const counter1 = createCounter();
+      const counter2 = createCounter();
+      counter1();
+      counter1();
+      counter2();
+      counter2();*/
+    </script>
+  </body>
+</html>
